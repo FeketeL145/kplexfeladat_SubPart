@@ -6,8 +6,28 @@
     <title>Document</title>
     <script src="javascript.js" defer></script>
     <link rel="stylesheet" href="css.css">
+    <!--Kérlek a bootstrapet majd vágd már be ide-->
 </head>
 <body>
+    <!--Egyenlőre csak bevágok mindent ide-->
+    <label class="switch">
+        <input type="checkbox" onclick="darkmode()">
+        <span class="slider-darkmode"></span>
+    </label>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--Ha helyes akkor automatiokusan lefrissít, és nem találom miért. Este 11 van öljetek meg -->
+    <form action="#" method="post" onsubmit="return ellenoriz()">
+        <label for="email">Email cím:</label>
+        <input type="text" id="email" name="email" required>
+        <input type="submit" value="Ellenőriz">
+    </form>
+    <p id="helyes" class="helyes">  </p>
+    <p id="helytelen" class="helytelen">  </p>
+
 
 </body>
 </html>
