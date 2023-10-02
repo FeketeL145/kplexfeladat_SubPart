@@ -14,6 +14,16 @@ body {
   justify-content: center;
   background: #4070f4;
 }
+/*
+body {
+  background-color: #F5F5FA; /*in theory this is an ideal background color*//*
+  color: #13131A;
+}
+*/
+.dark-mode {
+  background-color: #13131A;
+  /*color: #F5F5FA;*/
+}
 .container {
   position: relative;
   max-width: 740px;
@@ -97,3 +107,9 @@ form .input-field {
 .button input:hover {
   background-color: #0e4bf1;
 }
+
+/*
+Színkódokhoz és tippekhez:
+https://m2.material.io/design/color/dark-theme.html#ui-application
+
+*/

@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="darkmode.css" />
 
     <!-- Boxicons CSS -->
     <link
@@ -19,7 +20,12 @@
   </head>
   <body>
     <div class="container">
-      <header>Regisztráció</header>
+      <header>Regisztráció
+        <label class="switch">
+          <input type="checkbox" onclick="darkmode()">
+          <span class="slider-darkmode"></span>
+        </label>
+      </header>
       <form>
         <div class="field email-field">
           <div class="input-field">
@@ -37,6 +43,8 @@
                 type="password"
                 placeholder="Jelszó"
                 class="password"
+                value="PrObA$4321"
+                id="password-input"
               />
             </div>
             <span class="error password-error">
@@ -59,6 +67,9 @@
               <p class="error-text">Nem egyeznek a jelszavak</p>
             </span>
           </div>
+          <div class="showpassword">
+            <input type="checkbox" onclick="showpassword()"> Mutassa a jelszót
+          </div>
         </div>
         <div>
           <h5>Nem</h5>
@@ -80,6 +91,23 @@
             <label for="age1">30+</label>
           </div>
         </div>
+        <h5>Munkák</h5>
+        <div class="worktypes">
+          <label for="dog-names">Válasszon egy szakmát:</label>
+            <br> 
+            <select name="legorduloszakma" id="szakmailegordulo"> 
+              <option value="banyasz">Bányászat és kohászat</option> 
+              <option value="egeszsegugy">Egészségügy</option> 
+              <option value="egeszsegugytechnika">Egészségügyi technika</option> 
+              <option value="elektronikaelectrotechnika">Elektronika és elektrotechnika</option>
+              <option value="elelmiszeripar">élelmiszeripar</option>
+              <option value="epitoipar">építő ipar</option>
+              <option value="epuletgepeszet">Épületgépészet</option>
+              <option value="faesbutor">Fa- és bútoripar</option>
+              <option value="gazdalkodasesmenedzsment">Gazdálkodás és menedzsment</option>
+              <option value="gepeszet">Gépészet</option>
+            </select>
+        </div>
         <div class="input-field button">
           <input type="submit" value="Regisztráció"/>
           </div>
@@ -88,5 +116,7 @@
     
     <!-- JavaScript -->
    <script src="boxes.js"></script>
+   <script src="showpassword.js" defer></script>
+   <script src="darkmode.js" defer></script>
   </body>
 </html>
