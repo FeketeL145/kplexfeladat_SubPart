@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="javascript.js" defer></script>
-    <link rel="stylesheet" href="css.css">
+    <script src="darkmode.js" defer></script>
+    <script src="emailchecker.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="emailchecker.css">
     <!--Kérlek a bootstrapet majd vágd már be ide-->
+
+    <!--Ide rakom be, neten talált email ellenörző-->
+    <link rel="stylesheet" href="emailchecker.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <!--Egyenlőre csak bevágok mindent ide-->
@@ -19,15 +28,41 @@
     <br>
     <br>
 
-    <!--Ha helyes akkor automatiokusan lefrissít, és nem találom miért. Este 11 van öljetek meg -->
-    <form action="#" method="post" onsubmit="return ellenoriz()">
+    <!--Ellenőrzi és jelenleg csak szöveget ad vissza -->
+    <!--
+    <form action="#"  method="post" onsubmit="">
         <label for="email">Email cím:</label>
         <input type="text" id="email" name="email" required>
-        <input type="submit" value="Ellenőriz">
     </form>
-    <p id="helyes" class="helyes">  </p>
-    <p id="helytelen" class="helytelen">  </p>
+    <input type="submit" value="Ellenőriz" onclick="emailellenorzo()">
+    <p id="helyes" class="helyes"> proba 1 </p>
+    <p id="helytelen" class="helytelen"> proba 2 </p>
+-->
 
 
+
+    <!--Ide rakom be, neten talált email ellenörző-->
+    <div>
+        <form class="form">
+            <!-- input container  -->
+            <div class="input-container">
+              <input type="email" name="" placeholder=" " class="input-field" id="email-input" required />
+              <!-- input label - which will animate while focus on input  -->
+              <label for="email-input">Email Address</label>
+              <!-- email icon - font-awesome -->
+              <i id="email-icon" class="fa-regular fa-envelope"></i>
+              <span class="toast-msg" id="invalid-toast">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>Please enter the correct email format!</p>
+              </span>
+              <!-- email successfuly submit message  -->
+              <span class="toast-msg success" id="success-toast">
+                <i class="fa-solid fa-check"></i>
+                <p>Great! your email successfuly submitted.</p>
+              </span>
+            </div>
+            <button class="submit-btn">submit</button>
+          </form>
+    </div>
 </body>
 </html>

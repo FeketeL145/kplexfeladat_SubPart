@@ -7,7 +7,7 @@ body {
     background-color: #13131A;
     color: #F5F5FA;
   }
-
+ 
   .switch {       /*currently its the dark mode switch */
     position: relative;
     display: inline-block;

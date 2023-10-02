@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+/*Styling form, input and container*/
+.form {
+    position: relative;
+    width: 33rem;
+    height: auto;
+    padding: 3rem;
+    background: red
+}
+
+.form .dark-mode {
+    position: relative;
+    width: 33rem;
+    height: auto;
+    padding: 3rem;
+    background: green;
+}
+
+
+.input-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background: #1f1f1f;
+    /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.461); */
+}
+.input-container::before {
+    position: absolute;
+    content: "";
+    height: 30%;
+    width: 0.12rem;
+    left: 16%;
+    border-radius: 0.5rem;
+    background: #707070;
+}
+.input-container .input-field {
+    position: relative;
+    max-height: 4.2rem;
+    padding: 1.8rem 2.5rem;
+    padding-left: 5rem !important;
+    border: 0.15rem solid rgb(68, 68, 68);
+    color: #d2d2d2;
+    outline: none;
+    border-radius: 3rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    width: 100%;
+    background: transparent;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+/*Styling icons, input border and input label - move placeholder to top on focus*/
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    color: #999999;
+    padding: 0 0.3rem;
+    user-select: none;
+}
+#email-icon {
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999999;
+    font-size: 1.2rem;
+}
+.input-field:focus+label {
+    top: 0%;
+    left: 7%;
+    background-color: #1f1f1f;
+    color: #d2d2d2;
+}
+.input-field:focus {
+    border-color: #96c477;
+}
+.input-field.invalid {
+    border-color: #ff654a;
+}
+#email-input:not(:placeholder-shown)#email-input:not(:focus)+label {
+    top: 0%;
+    left: 7%;
+    background-color: #1f1f1f;
+    color: #d2d2d2;
+}
+#email-input:not(:placeholder-shown)#email-input:not(:focus) {
+    border-color: #96c477;
+}
+
+
+/*Styling email input validation custom error message and submit button*/
+.toast-msg {
+    position: absolute;
+    left: 8%;
+    top: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.toast-msg.active {
+    margin-top: 0.5rem;
+    opacity: 1;
+}
+.toast-msg p {
+    font-size: 0.8rem;
+    color: #ff654a;
+    margin-left: 0.3rem;
+}
+.toast-msg.success p {
+    color: #97e365;
+}
+.toast-msg i {
+    font-size: 1rem;
+    color: #ff654a;
+}
+.toast-msg.success i {
+    color: #97e365;
+}
+.submit-btn {
+    position: relative;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    float: right;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    border: none;
+    outline: none;
+    background-color: #eeeeee;
+    transition: .1s ease-in-out;
+}
+.submit-btn:active {
+    transform: scale(.95);
+}
