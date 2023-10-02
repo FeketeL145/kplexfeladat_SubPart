@@ -6,16 +6,15 @@ const form = document.querySelector("form"),
   passField = form.querySelector(".create-password"),
   passInput = passField.querySelector(".password"),
   cPassField = form.querySelector(".confirm-password"),
-  cPassInput = cPassField.querySelector(".cPassword"),
-  genderRadioState = form.querySelector(".gradio"),
-  ageRadioState = form.querySelector(".aradio");
+  cPassInput = cPassField.querySelector(".cPassword");
 
 // Name Validtion
 function checkName() {
   if (nameInput.value === "") {
     return nameField.classList.add("invalid");
   }
-  emailField.classList.remove("invalid"); 
+  emailField.classList.remove("invalid");
+   
 }
 // Email Validtion
 function checkEmail() {
@@ -60,48 +59,72 @@ function confirmPass() {
   cPassField.classList.remove("invalid");
 }
 
-//Gender and Age requirement
-function requiredGender(){
-  if(genderRadioState.value != "true")
-  {
-    return genderRadioState.classList.add("invalid");
-  }
-  genderRadioState.classList.remove("invalid");
+//Váltás Jelszógen/Megadott jelszó között
+function beirtjelszo(){
+  document.getElementById("password-input").disabled = false;
+  document.getElementById("password-repeat").disabled = false;
+  passInput.value = "";
+  cPassInput.value = passInput.value;
 }
-function requiredAge(){
-  if(ageRadioState.value != "true")
-  {
-    return ageRadioState.classList.add("invalid");
-  }
-  ageRadioState.classList.remove("invalid");
+function generaltjelszo(){
+  document.getElementById("password-input").disabled = true;
+  document.getElementById("password-repeat").disabled = true;
+  let numbers = "0123456789";
+  let lcase = "abcdefghijklmnopqrstuvwxyz";
+  let ucase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let schars = "@$!%*?&";
+  let passwordLength = 2;
+  passInput.value = "";
+      for (b = 0; b <= passwordLength; b++) {
+        let rnd1 = Math.floor(Math.random() * ucase.length);
+        passInput.value += ucase.substring(rnd1, rnd1 +1);
+        let rnd2 = Math.floor(Math.random() * schars.length);
+        passInput.value += schars.substring(rnd2, rnd2 +1);
+        let rnd3 = Math.floor(Math.random() * lcase.length);
+        passInput.value += lcase.substring(rnd3, rnd3 +1);
+        let rnd4 = Math.floor(Math.random() * numbers.length);
+        passInput.value += numbers.substring(rnd4, rnd4 +1);
+      }
+      cPassInput.value = passInput.value;
 }
+    
 
-// Calling Funtion on Form Sumbit
+//Function hívás submit gombra
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  checkName();
   checkEmail();
   createPass();
   confirmPass();
-  requiredAge();
-  requiredGender();
 
-  //calling function on key up
-  nameInput.addEventListener("keyup", checkName);
+  //Gombfelengedésre functionok
   emailInput.addEventListener("keyup", checkEmail);
   passInput.addEventListener("keyup", createPass);
   cPassInput.addEventListener("keyup", confirmPass);
-  ageRadioState.addEventListener("onclick",requiredAge);
-  genderRadioState.addEventListener("onclick",requiredGender);
 
   if (
-    !nameField.classList.contains("invalid") &&
     !emailField.classList.contains("invalid") &&
     !passField.classList.contains("invalid") &&
-    !cPassField.classList.contains("invalid") &&
-    !ageRadioState.classList.contains("invalid") &&
-    !genderRadioState.classList.contains("invalid")
-  ) {
+    !cPassField.classList.contains("invalid")
+    ) 
+  {
+    let nev = nameInput.value;
+    let email = emailInput.value;
+    let password = passInput.value;
+    let genders = document.getElementsByName('gender');
+    let selgender;
+    let ages = document.getElementsByName('ages');
+    let selage;
+    for(i = 0; i < genders.length; i++) {
+      if (genders[i].checked){
+        selgender = genders[i].value;
+      }
+    }
+    for(i = 0; i < ages.length; i++) {
+      if (ages[i].checked){
+        selage = ages[i].value;
+      }
+    }
     location.href = form.getAttribute("action");
   }
 });
