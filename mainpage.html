@@ -1,68 +1,92 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regisztrációs lap</title>
-    <script src="darkmode.js" defer></script>
-    <script src="emailchecker.js" defer></script>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="emailchecker.css">
-    <!--Kérlek a bootstrapet majd vágd már be ide-->
-
-    <!--Ide rakom be, neten talált email ellenörző vavava-->
-    <link rel="stylesheet" href="emailchecker.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css" />
 
-</head>
-<body>
-    <!--Egyenlőre csak bevágok mindent ide-->
-    <label class="switch">
-        <input type="checkbox" onclick="darkmode()">
-        <span class="slider-darkmode"></span>
-    </label>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <!--Ellenőrzi és jelenleg csak szöveget ad vissza -->
-    <!--
-    <form action="#"  method="post" onsubmit="">
-        <label for="email">Email cím:</label>
-        <input type="text" id="email" name="email" required>
-    </form>
-    <input type="submit" value="Ellenőriz" onclick="emailellenorzo()">
-    <p id="helyes" class="helyes"> proba 1 </p>
-    <p id="helytelen" class="helytelen"> proba 2 </p>
--->
-
-
-
-    <!--Ide rakom be, neten talált email ellenörző-->
-    <div>
-        <form class="form">
-            <!-- input container  -->
-            <div class="input-container">
-              <input type="email" name="" placeholder=" " class="input-field" id="email-input" required />
-              <!-- input label - which will animate while focus on input  -->
-              <label for="email-input">Email Address</label>
-              <!-- email icon - font-awesome -->
-              <i id="email-icon" class="fa-regular fa-envelope"></i>
-              <span class="toast-msg" id="invalid-toast">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <p>Please enter the correct email format!</p>
-              </span>
-              <!-- email successfuly submit message  -->
-              <span class="toast-msg success" id="success-toast">
-                <i class="fa-solid fa-check"></i>
-                <p>Great! your email successfuly submitted.</p>
-              </span>
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>Regisztráció</header>
+      <form>
+        <div class="field email-field">
+          <div class="input-field">
+            <input type="email" placeholder="Email cím" class="email" />
+          </div>
+          <span class="error email-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Kérem írjon be egy valós email címet</p>
+          </span>
+        </div>
+        <div id="passwordcreation">
+          <div class="field create-password">
+            <div class="input-field">
+              <input
+                type="password"
+                placeholder="Jelszó"
+                class="password"
+              />
             </div>
-            <button class="submit-btn">submit</button>
-          </form>
+            <span class="error password-error">
+              <i class="bx bx-error-circle error-icon"></i>
+              <p class="error-text">
+                A Jelszónak legalább 8 karakterből kell állnia és tartalmaznia kell: Kisbetűt, Nagybetűt, Számot és Speciális karaktert.
+              </p>
+            </span>
+          </div>
+          <div class="field confirm-password">
+            <div class="input-field">
+              <input
+                type="password"
+                placeholder="Jelszó megerősítése"
+                class="cPassword"
+              />
+            </div>
+            <span class="error cPassword-error">
+              <i class="bx bx-error-circle error-icon"></i>
+              <p class="error-text">Nem egyeznek a jelszavak</p>
+            </span>
+          </div>
+        </div>
+        <div>
+          <h5>Nem</h5>
+          <div class="field gender">
+            <input type="checkbox" id="man" value="Férfi">
+            <label for="man">Férfi</label>
+            <input type="checkbox" id="woman" value="Férfi">
+            <label for="woman">Nő</label>
+          </div>
+          <h5>Életkor</h5>
+          <div class="field age">
+            <input type="radio" id="age1" value="18-20">
+            <label for="age1">18-20</label>
+            <input type="radio" id="age2" value="21-24">
+            <label for="age1">21-24</label>
+            <input type="radio" id="age3" value="25-30">
+            <label for="age1">25-30</label>
+            <input type="radio" id="age4" value="30+">
+            <label for="age1">30+</label>
+          </div>
+        </div>
+        <div class="input-field button">
+          <input type="submit" value="Regisztráció"/>
+          </div>
+      </form>
     </div>
-</body>
+    
+    <!-- JavaScript -->
+   <script src="boxes.js"></script>
+  </body>
 </html>
