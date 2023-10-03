@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: #fff;
 }
 body {
   min-height: 100vh;
@@ -29,12 +30,15 @@ body {
   width: 100%;
   padding: 25px;
   border-radius: 8px;
-  background-color: #fff;
+  outline: auto;
+  text-shadow: rgba(0, 0, 0, 0.438) 1px 0 10px;
+  backdrop-filter: blur(10px);
 }
 .container header {
   font-size: 22px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.438) 1px 0 10px;
 }
 .container form {
   margin-top: 30px;
@@ -70,6 +74,22 @@ form .input-field {
   color: #919191;
   cursor: pointer;
   padding: 3px;
+}
+.input-field .envelope, .user, .hard-hat {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #919191;
+  cursor: pointer;
+  padding: 3px;
+}
+.field .work-area-field{
+  color: black;
+}
+option{
+  color: #919191;
 }
 .field .error {
   display: flex;
@@ -110,16 +130,5 @@ form .input-field {
   padding-bottom: 5px;
 }
 .uil{
-  font-size: 25px;
+  font-size: 23px;
 }
-
-/*
-.dark-mode {
-  background-color: #13131A;
-  color: #F5F5FA;
-}*/
-/*
-Színkódokhoz és tippekhez:
-https://m2.material.io/design/color/dark-theme.html#ui-application
-
-*/

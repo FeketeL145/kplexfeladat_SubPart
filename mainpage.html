@@ -24,11 +24,13 @@
         <div class="field name-field">
           <div class="input-field">
             <input type="text" required placeholder="Név" id="namevalue" class="name"/>
+            <i class="bx bx-user user"></i>
           </div>
           <div>
         <div class="field email-field">
           <div class="input-field">
             <input type="email" required placeholder="Email cím" class="email"/>
+            <i class="bx bx-envelope envelope"></i>
           </div>
           <span class="error email-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -36,10 +38,10 @@
           </span>
         </div>
         <div class="field password-choice">
-          <input type="radio" name="pwchoice" value="sajatpw" checked onclick="beirtjelszo()">
-          <label for="sajatpw">Jelszó beírása</label>
-          <input type="radio" name="pwchoice" value="generaltpw" onclick="generaltjelszo()">
-          <label for="generaltpw">Generált jelszó</label>
+          <input type="radio" name="pwchoice" value="sajatpw" id="sajatpw" checked onclick="beirtjelszo()">
+          <label for="sajatpw"><i class="uil uil-edit-alt"></i> Jelszó beírása</label>
+          <input type="radio" name="pwchoice" value="generaltpw" id="generaltpw" onclick="generaltjelszo()">
+          <label for="generaltpw"><i class="uil uil-cog"></i> Generált jelszó</label>
         </div>
         <div id="passwordcreation">
           <div class="field create-password">
@@ -72,10 +74,8 @@
             <label for="ferfi"><i class="uil uil-mars"></i> Férfi</label>
             <input type="radio" name="gender" id="no" value="no">
             <label for="no"><i class="uil uil-venus"></i> Nő</label>
-            <input type="radio" name="gender" id="egyeb" value="egyeb">
-            <label for="egyeb"><i class="uil uil-exclamation-triangle"></i> Egyéb</label>
           </div>
-          <h5>Életkor</h5>
+          <h5><i class="uil uil-18-plus"></i> Életkor</h5>
           <div class="field age">
             
             <input class="aradio" required type="radio" name="ages" id="age1" value="18-20">
@@ -93,11 +93,12 @@
           <label>Adjon meg egy szakmát:</label>
           <div class="input-field">
             <input type="text" required placeholder="Szakma" id="workvalue" class="work"/>
+            <i class="bx bx-hard-hat hard-hat"></i>
           </div>
           <div>
-        <div class="field work-area-field">
+        <div class="field">
           <label>Válasszon egy munkaterületet:</label>
-            <select name="legorduloszakma" class="input-field" id="workarea"> 
+            <select name="legorduloszakma" class="input-field work-area-field" id="workarea"> 
               <option value="banyasz">Bányászat és kohászat</option> 
               <option value="egeszsegugy">Egészségügy</option> 
               <option value="egeszsegugytechnika">Egészségügyi technika</option> 
