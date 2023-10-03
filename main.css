@@ -6,7 +6,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-shadow: rgba(0, 0, 0, 0.438) 1px 0 10px;
   color: #fff;
+}
+svg{
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.438));
 }
 body {
   min-height: 100vh;
@@ -31,7 +35,6 @@ body {
   padding: 25px;
   border-radius: 8px;
   outline: auto;
-  text-shadow: rgba(0, 0, 0, 0.438) 1px 0 10px;
   backdrop-filter: blur(10px);
 }
 .container header {

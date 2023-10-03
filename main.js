@@ -51,12 +51,16 @@ function confirmPass() {
 
 //Váltás Jelszógen/Megadott jelszó között
 function beirtjelszo(){
+  document.getElementById("shide1").style.color = "#919191";
+  document.getElementById("shide2").style.color = "#919191";
   document.getElementById("password-input").disabled = false;
   document.getElementById("password-repeat").disabled = false;
   passInput.value = "";
   cPassInput.value = passInput.value;
 }
 function generaltjelszo(){
+  document.getElementById("shide1").style.color = "#d3d3d3";
+  document.getElementById("shide2").style.color = "#d3d3d3";
   document.getElementById("password-input").disabled = true;
   document.getElementById("password-repeat").disabled = true;
   let numbers = "0123456789";
