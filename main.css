@@ -60,6 +60,7 @@ form .input-field {
   border: none;
   border-radius: 8px;
   padding: 0 15px;
+  color: black;
   border: 1px solid #d1d1d1;
 }
 .invalid input {
