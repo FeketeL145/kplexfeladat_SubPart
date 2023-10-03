@@ -1,6 +1,4 @@
 const form = document.querySelector("form"),
-  nameField = form.querySelector(".name-field"),
-  nameInput = nameField.querySelector(".name"),
   emailField = form.querySelector(".email-field"),
   emailInput = emailField.querySelector(".email"),
   passField = form.querySelector(".create-password"),
@@ -8,14 +6,6 @@ const form = document.querySelector("form"),
   cPassField = form.querySelector(".confirm-password"),
   cPassInput = cPassField.querySelector(".cPassword");
 
-// Name Validtion
-function checkName() {
-  if (nameInput.value === "") {
-    return nameField.classList.add("invalid");
-  }
-  emailField.classList.remove("invalid");
-   
-}
 // Email Validtion
 function checkEmail() {
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -108,23 +98,27 @@ form.addEventListener("submit", (e) => {
     !cPassField.classList.contains("invalid")
     ) 
   {
-    let nev = nameInput.value;
+    let nev = document.getElementById("namevalue").value;
     let email = emailInput.value;
     let password = passInput.value;
     let genders = document.getElementsByName('gender');
     let selgender;
     let ages = document.getElementsByName('ages');
     let selage;
+    let worktype = document.getElementById("workvalue").value;
+    let workarea = document.getElementById("workarea").value;
     for(i = 0; i < genders.length; i++) {
       if (genders[i].checked){
         selgender = genders[i].value;
-      }
     }
+  }
     for(i = 0; i < ages.length; i++) {
       if (ages[i].checked){
         selage = ages[i].value;
       }
     }
+    
+    console.log(`${nev} ${email} ${password} ${selgender} ${selage} ${worktype} ${workarea}`);
     location.href = form.getAttribute("action");
   }
 });
