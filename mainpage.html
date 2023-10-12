@@ -11,163 +11,135 @@
     <!-- CSS -->
     <link rel="stylesheet" href="main.css" />
 
-    <!--Ikon packek -->
+    <!--Ikon pack -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
   </head>
   <body>
     <div class="container">
-      <header><i class="uil uil-file-info-alt"></i>
-        <!--
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pass" viewBox="0 0 16 16">
-        <path d="M5.5 5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"/>
-        <path d="M8 2a2 2 0 0 0 2-2h2.5A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0H6a2 2 0 0 0 2 2Zm0 1a3.001 3.001 0 0 1-2.83-2H3.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-1.67A3.001 3.001 0 0 1 8 3Z"/>
-        </svg>-->   Regisztráció</header>
+      <header><i class="bx bx-paperclip"></i> Regisztráció</header>
       <form action="donepage.html">
+        <!--Név input-->
         <div class="field name-field">
           <div class="input-field">
-            <input type="text" required placeholder="Név" id="namevalue" class="name"/>
+            <input type="text" placeholder=" Név" id="name" class="name"/>
             <i class="bx bx-user user"></i>
-            <!--<i class="bi bi-person"></i>-->
-            <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-            </svg>
-            -->
           </div>
-          <div>
+          <span class="error name-error">
+            <p class="error-text">Kérem írjon be egy valós nevet!</p>
+          </span>
+        </div>
+        <!--Email input-->
         <div class="field email-field">
           <div class="input-field">
-            <input type="email" required placeholder="Email cím" class="email"/>
+            <input type="email" placeholder=" Email cím" class="email" id="email"/>
             <i class="bx bx-envelope envelope"></i>
-            <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-            </svg>
-          -->
           </div>
           <span class="error email-error">
-            <i class="bx bx-error-circle error-icon"></i>
-            <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-exclamation" viewBox="0 0 16 16">
-              <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0Zm0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-            </svg>-->
             <p class="error-text">Kérem írjon be egy valós email címet!</p>
           </span>
         </div>
+        <!--Jelszó választás input-->
         <div class="field password-choice">
-          <input type="radio" name="pwchoice" value="sajatpw" id="sajatpw" checked onclick="beirtjelszo()">
+          <div class="input-field">
+            <input type="radio" name="pwchoice" value="sajatpw" id="sajatpw" checked onclick="beirtjelszo()">
           <label for="sajatpw">
-            <i class="uil uil-edit-alt"></i>
-            <!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-            </svg> -->
-            Jelszó beírása</label>
+            <i class="bx bx-pencil"></i>
+            Jelszó beírása</label>&nbsp;
           <input type="radio" name="pwchoice" value="generaltpw" id="generaltpw" onclick="generaltjelszo()">
           <label for="generaltpw">
-            <!--  <i class="uil uil-cog"></i>
-            <!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
-              <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-              <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
-            </svg>  -->  
+            <i class="bx bx-cog"></i>
             Generált jelszó</label>
+          </div>
         </div>
+        <!--Jelszó input-->
         <div id="passwordcreation">
           <div class="field create-password">
             <div class="input-field">
-              <input type="password" required placeholder="Jelszó" class="password" id="password-input"/>
+              <input type="password" placeholder=" Jelszó" class="password" id="password-input"/>
               <i class="bx bx-hide show-hide" id="shide1"></i>
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
-                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
-                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
-                <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
-              </svg> -->
             </div>
             <span class="error password-error">
-              <i class="bx bx-error-circle error-icon"></i>
               <p class="error-text">
                 A Jelszónak legalább 8 karakterből kell állnia és tartalmaznia kell: Kisbetűt, Nagybetűt, Számot és Speciális karaktert.
               </p>
             </span>
           </div>
-          <div class="field confirm-password">
-            <div class="input-field">
-              <input type="password" required placeholder="Jelszó megerősítése" class="cPassword" id="password-repeat"/>
-              <i class="bx bx-hide show-hide" id="shide2"></i>
-              <!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
-                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
-                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
-                <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
-              </svg>  -->
-            </div>
-            <span class="error cPassword-error">
-              <i class="bx bx-error-circle error-icon"></i>
-              <p class="error-text">Nem egyeznek a jelszavak</p>
-            </span>
-          </div>
         </div>
         <div>
-          <h5><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-gender-ambiguous" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.5 1a.5.5 0 0 1 0-1h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-3.45 3.45A4 4 0 0 1 8.5 10.97V13H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V14H6a.5.5 0 0 1 0-1h1.5v-2.03a4 4 0 1 1 3.471-6.648L14.293 1H11.5zm-.997 4.346a3 3 0 1 0-5.006 3.309 3 3 0 0 0 5.006-3.31z"/>
-          </svg> Nem</h5>
-          <div class="field gender">
-            <input required type="radio" name="gender" id="ferfi" value="ferfi">
-            <label for="ferfi">
-              <i class="uil uil-mars"></i>
-              <!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
-              </svg>  -->  
-              Férfi</label>
-            <input type="radio" name="gender" id="no" value="no">
-            <label for="no">
-              <i class="uil uil-venus"></i>
-              <!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
-              </svg> --> 
-              Nő</label>
+          <h5><i class="bx bx-male-female"></i> Nem</h5>
+          <div class="field gender-field">
+            <div class="input-field">
+              <input type="radio" name="gender" id="ferfi" value="ferfi">
+              <label for="ferfi"><i class="bx bx-male-sign"></i> Férfi</label>&nbsp;
+              <input type="radio" name="gender" id="no" value="no">
+              <label for="no"><i class="bx bx-female-sign"></i> Nő</label>&nbsp;
+              <input type="radio" name="gender" id="egyeb" value="egyeb">
+              <label for="egyeb"><i class="bx bx-accessibility"></i> Egyéb</label>
+              <span class="error gender-error">
+                <p class="error-text">Válasszon egy nemet!</p>
+              </span>
+            </div>
           </div>
-          <h5><i class="uil uil-18-plus"></i> Életkor</h5>
-          <div class="field age">
-            
-            <input class="aradio" required type="radio" name="ages" id="age1" value="18-20">
-            <label for="age1" class="aradio-label">18-20</label>
-            <input class="aradio" type="radio" name="ages" id="age2" value="21-24">
-            <label for="age2" class="aradio-label">21-24</label>
-            <input class="aradio" type="radio" name="ages" id="age3" value="25-30">
-            <label for="age3" class="aradio-label">25-30</label>
-            <input class="aradio" type="radio" name="ages" id="age4" value="30+">
-            <label for="age4" class="aradio-label">30+</label>
+          <h5><i class="bx bx-walk"></i> Életkor</h5>
+          <div class="field age-field">
+            <div class="input-field">
+              <input class="aradio" type="radio" name="age" id="age1" value="18-20">
+              <label for="age1" class="aradio-label">18-20</label>&nbsp;&nbsp;
+              <input class="aradio" type="radio" name="age" id="age2" value="21-24">
+              <label for="age2" class="aradio-label">21-24</label>&nbsp;&nbsp;
+              <input class="aradio" type="radio" name="age" id="age3" value="25-30">
+              <label for="age3" class="aradio-label">25-30</label>&nbsp;&nbsp;
+              <input class="aradio" type="radio" name="age" id="age4" value="30+">
+              <label for="age4" class="aradio-label">30+</label>
+              <span class="error age-error">
+                <p class="error-text">Válasszon egy életkort!</p>
+              </span>
+            </div>
+              
           </div>
         </div>
         <h5>Munkák</h5>
         <div class="field work-field">
           <label>Adjon meg egy szakmát:</label>
           <div class="input-field">
-            <input type="text" required placeholder="Szakma" id="workvalue" class="work"/>
+            <input type="text" placeholder=" Szakma" id="work" class="work"/>
             <i class="bx bx-hard-hat hard-hat"></i>
-            <!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
-              <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
-            </svg> -->
+            <span class="error work-error">
+              <p class="error-text">
+                Kérem írjon be egy szakmát!
+              </p>
+            </span>
           </div>
-          <div>
-        <div class="field">
-          <label>Válasszon egy munkaterületet:</label>
-            <select name="legorduloszakma" class="input-field work-area-field" id="workarea"> 
-              <option value="banyasz">Bányászat és kohászat</option> 
-              <option value="egeszsegugy">Egészségügy</option> 
-              <option value="egeszsegugytechnika">Egészségügyi technika</option> 
-              <option value="elektronikaelectrotechnika">Elektronika és elektrotechnika</option>
-              <option value="elelmiszeripar">Élelmiszeripar</option>
-              <option value="epitoipar">Építőipar</option>
-              <option value="epuletgepeszet">Épületgépészet</option>
-              <option value="faesbutor">Fa- és bútoripar</option>
-              <option value="gazdalkodasesmenedzsment">Gazdálkodás és menedzsment</option>
-              <option value="gepeszet">Gépészet</option>
-              <option value="technologia">IT és Technológia</option>
-            </select>
+          
         </div>
+          <div class="field work-area-field">
+            <label>Válasszon egy munkaterületet:</label>
+            <div class="input-field">
+              <select name="legorduloszakma" class="work-area" id="work-area">
+                <option value="" selected>Válasszon egyet</option>
+                <option value="banyasz">Bányászat és kohászat</option> 
+                <option value="egeszsegugy">Egészségügy</option> 
+                <option value="egeszsegugytechnika">Egészségügyi technika</option> 
+                <option value="elektronikaelectrotechnika">Elektronika és elektrotechnika</option>
+                <option value="elelmiszeripar">Élelmiszeripar</option>
+                <option value="epitoipar">Építőipar</option>
+                <option value="epuletgepeszet">Épületgépészet</option>
+                <option value="faesbutor">Fa- és bútoripar</option>
+                <option value="gazdalkodasesmenedzsment">Gazdálkodás és menedzsment</option>
+                <option value="gepeszet">Gépészet</option>
+                <option value="technologia">IT és Technológia</option>
+              </select>
+            </div>
+            <span class="error work-area-error">
+              <p class="error-text">
+                Kérem válasszon egy munkaterületet!
+              </p>
+            </span>
+          </div>
+          
         <div class="input-field button">
           <input type="submit" value="Regisztráció"/>
-          </div>
+        </div>
       </form>
     </div>
     

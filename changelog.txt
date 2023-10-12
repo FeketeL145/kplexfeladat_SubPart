@@ -1,0 +1,4 @@
+- Replaced "required" with actual errors
+- Replaced background images
+- Added checks and errors to everything
+- Styled radio buttons
